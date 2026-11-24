@@ -1,0 +1,9 @@
+plugins { id 'com.android.application' }
+android {
+  namespace 'jp.haruya.modelforge'
+  compileSdk 35
+  defaultConfig { applicationId 'jp.haruya.modelforge'; minSdk 26; targetSdk 35; versionCode 1; versionName '1.0.0' }
+  compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+  buildTypes { release { minifyEnabled false } }
+}
+dependencies { implementation fileTree(dir: '../libs', include: ['*.jar']) }
