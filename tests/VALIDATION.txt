@@ -1,0 +1,35 @@
+2026-11-12
+Geometry tests: 8 passed
+Native streaming transport checks: 8 passed
+APK v2/v3 signature: verified
+
+{
+  "scope": "Bundled APK web assets in headless Chromium; Android bridge and AI responses mocked where noted. No live ChatGPT account used.",
+  "checks": [
+    "Initial sample renders with CSP and bundled WASM",
+    "phone: no horizontal overflow",
+    "narrow: no horizontal overflow",
+    "fold: no horizontal overflow",
+    "Dimension edit changes geometric bounds",
+    "Project and dimensions survive reload",
+    "Multi-part sample renders",
+    "stl: non-empty export",
+    "STL binary length and triangle count match",
+    "glb: non-empty export",
+    "GLB is version 2 with matching length",
+    "GLB includes material color",
+    "GLB uses millimeter-to-meter conversion",
+    "obj: non-empty export",
+    "project: non-empty export",
+    "JSON import creates an independent editable project",
+    "Invalid geometry reports error and retains prior shape",
+    "Official sign-in label is present",
+    "Text, model, image IDs and sample editing context reach native bridge",
+    "Completed response applies even after changing tabs",
+    "Malformed AI response retains prior model and offers repair",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}
+
+Live ChatGPT login, real inference, physical Android behavior and physical 3D printing have not been tested.
