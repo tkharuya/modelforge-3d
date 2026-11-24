@@ -1,0 +1,12 @@
+import {build} from 'esbuild';
+import {copyFile,mkdir,readFile,writeFile} from 'node:fs/promises';
+const out='app/src/main/assets';await mkdir(out,{recursive:true});
+await build({entryPoints:['web/app.js','web/worker.js'],outdir:out,bundle:true,format:'esm',target:'chrome100',minify:true,legalComments:'eof',external:['node:module']});
+await copyFile('web/index.html',out+'/index.html');await copyFile('web/app.css',out+'/app.css');
+await copyFile('node_modules/manifold-3d/manifold.wasm',out+'/manifold.wasm');
+let licenses='ModelForge 3D third-party licenses\n\n';
+for(const lib of ['three','manifold-3d'])licenses+=`\n${lib}\n`+await readFile(`node_modules/${lib}/LICENSE`,'utf8');
+licenses+='\n\njose4j 0.9.6, Copyright (c) Brian Campbell. Apache License 2.0.\n'+await readFile('licenses/Apache-2.0.txt','utf8');
+licenses+='\n\nSLF4J API and NOP 1.7.36\n'+await readFile('licenses/SLF4J-MIT.txt','utf8');
+await writeFile(out+'/THIRD_PARTY_LICENSES.txt',licenses);
+console.log('Web assets built.');
