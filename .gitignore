@@ -1,0 +1,15 @@
+node_modules/
+build/
+app/build/
+.gradle/
+local.properties
+*.jks
+*.keystore
+*.p12
+signing-password.txt
+test-output/
+.signing/
+signing/
+.env
+.env.*
+*.apk

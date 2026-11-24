@@ -1,0 +1,26 @@
+{
+  "name": "modelforge-3d",
+  "version": "1.0.0",
+  "description": "Personal Android app for ChatGPT-guided parametric 3D modeling",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "node scripts/build-web.mjs",
+    "test": "node --test tests/engine.test.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "esbuild": "0.28.2",
+    "manifold-3d": "3.5.4",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "playwright-core": "1.57.0"
+  },
+  "private": true
+}
